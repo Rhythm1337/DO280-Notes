@@ -50,6 +50,7 @@ oc create route edge --service app-frontend --hostname api.apps.acme.com --key a
 --cert contains the signed certificate
 
 If --key and --cert are ommited then OpenShift will provide a certificate form its internal Certificate Authority (CA). Use the command 
+
 ```
 oc get secrets/router-ca -n openshift-ingress-operator -o yaml
 ```
@@ -65,3 +66,5 @@ Passthrough routes offer a more secure alternative, because the application expo
 ## Securing Applications with Re-encrypt Routes
 Read student guide for this lol
 
+
+# 2. Configure Network Policies
