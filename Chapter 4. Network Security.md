@@ -90,4 +90,23 @@ oc annotate service hello service.beta.openshift.io/serving-cert-secret-name=hel
 ```
 
 After the secret is generated you need to mount it in the application deployment.
+>For clients to verify the validity of a certificate, the application needs the CA bundle that signed that certificate.
+
+## Configuration Maps
+
+```
+oc annotate configmap ca-bundle service.beta.openshift.io/inject-cabundle=true
+```
+
+## Key Rotation
+ The CA certificate is valid for 26 months by default and is automatically rotated after 13 months. During this grade period of 13 months, each pod that is configured to trust the original CA certificate must be restarted in some way. A service automatically injects the new CA bundle.
+
+**You can also manually rotate the certificate**
+
+```
+oc delete secret/signing-key -n openshift-service-ca
+```
+
+## Alternatives to Service Certificates
+Using a service mesh or the cert manager operator
 
