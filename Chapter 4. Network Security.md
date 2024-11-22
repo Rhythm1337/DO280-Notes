@@ -1,4 +1,4 @@
-# Protect External Traffic with TLS
+# 1. Protect External Traffic with TLS
 
 ## What you will learn:
 Allow and protect network connections to the application to the OpenShift cluster.
@@ -25,10 +25,28 @@ Routes can be both encrypted or unencrypted.
 ### OpenShift Route Encryption:
 
 **Edge**
+
 With Edge termination, TLS termination occours at the router meaning the traffic sent from the application to the router is unencrypted.
 
 **Passthrough**
+
 With Passthrough termination, encrypted traffic is directly sent to the pod without TLS termination at the router. This is common for when a client has to access the appliction directly.
 
 **Re-encryption**
-This is a variation of Edge termination where traffic sent to the router is encrypted and the route from the router to the application is also encrypted with might be encrypted with a different certificate
+
+This is a variation of Edge termination where traffic sent to the router is encrypted and the route from the router to the application is also encrypted with might be encrypted with a different certificate.
+
+## Securing Applications with Edge Routes
+
+Before creating a encrypted route you need a TLS certificate
+
+Command to create  an encrypted edge route
+
+```
+oc create route edge --service app-frontend --hostname api.apps.acme.com --key app.key --cert app.crt
+```
+
+--key contains the private key
+--cert contains the signed certificate
+
+If --key and --cert are ommited 
