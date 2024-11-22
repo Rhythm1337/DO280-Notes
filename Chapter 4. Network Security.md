@@ -68,3 +68,17 @@ Read student guide for this lol
 
 
 # 2. Configure Network Policies
+
+## Managing Network Policies in OpenShift
+
+With network policies you can configure isolation for individual pods. Network policies dont require administrative privileges, and give developers more control over applications in their projects. You can use network policies to create logical ones in the SDN that map to your organization network zone. Benifit of this approach is that the location of this approach is that the location of the pods become irrelevant, because with network policies you can seperate traffic regardless of where it orignates form.
+
+In contrast to traditional firewalls, Kubernetes network policies control network traffic between pods by using labels insted of ip addresses. To manage network communication between pods in two namespaces, assign a lable to the namespace that needs access to another namespace and create a network policy that selects these lables.
+
+**For all policies examples refer student guide**
+
+TLDR Network policies control pod to pod traffic(only for pods that arent using host networking). Traffic between pods that use host networking bypasses these policies on the same node.
+
+# 3. Protect Internal Traffic with TLS
+
+## Zero-trust Environments
