@@ -77,3 +77,17 @@ TLDR Network policies control pod to pod traffic (only for pods that aren't usin
 # 3. Protect Internal Traffic with TLS
 
 ## Zero-trust Environments
+Zero trust environmets assume that every interaction begins at an untrusted state. Users can access only files and objects that they are assigned, communication must be encrypted and client applications must verify the authenticity of the servers
+
+By default openshift excrypts traffic between nodes and the control plane, and prevents external entities from reading internal traffic. This encryption is stronger thatn default cubernetes which does not encrypt internal traffic.
+
+## Service Certificate Creation
+
+Generating a certificate
+
+```
+oc annotate service hello service.beta.openshift.io/serving-cert-secret-name=hello-secret
+```
+
+After the secret is generated you need to mount it in the application deployment.
+
