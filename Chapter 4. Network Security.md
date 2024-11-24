@@ -6,7 +6,7 @@ Allow and protect network connections to the application to the OpenShift cluste
 ## Accessing Applications from External Networks
 OpenShift offers many ways to expose your application to external networks. You can expose HTTP and HTTPS traffic, TCP and non-TCP traffic. 
 
-### Some of these methods are:
+## Some of these methods are:
 
 **Service Types**
 - NodePort
@@ -22,7 +22,7 @@ OpenShift offers many ways to expose your application to external networks. You 
 ## Encrypting Routes
 Routes can be both encrypted or unencrypted. 
 
-### OpenShift Route Encryption:
+## OpenShift Route Encryption:
 
 **Edge**
 
