@@ -50,3 +50,10 @@ spec:
 ```
 oc get quota example -o yaml
 ```
+
+**Common Command**
+
+```
+oc get quota
+```
+
