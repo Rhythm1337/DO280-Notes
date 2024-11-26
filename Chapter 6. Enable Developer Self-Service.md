@@ -11,3 +11,42 @@ This limits resources that a workload consumes and helps prevent workload from c
 ### Resource Requests
 Workloads can declare how much resources they need and kubernetes tracks requested resources and prevents deployment of new workloads if the cluster has insufficient resources.
 
+## Resource Quotas
+
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: limit-memory
+  namespace: test
+spec:
+  hard:
+    limits.memory: 4Gi
+    requests.memory: 2Gi
+  scopes: {}
+  scopeSelector: {}
+```
+
+```
+oc api-resources --test-group=""  --namespaced=true
+```
+
+## Applying Project Quotas
+
+```
+oc create resourcequota test --hard=count/pods=1
+```
+
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: test
+spec:
+  hard:
+    count/pods: "1"
+```
+
+```
+oc get quota example -o yaml
+```
