@@ -57,3 +57,17 @@ oc get quota example -o yaml
 oc get quota
 ```
 
+# 2. Per-Project Resource Constraints: Limit Ranges
+
+## What you will learn
+Configure default maximum resources for pods per project
+
+## Managing Namespace Resources
+Cluster 
+
+
+# 3. The Project Template and the Self-Provisioner Role
+
+## What you will learn
+
+## Project Creation   
