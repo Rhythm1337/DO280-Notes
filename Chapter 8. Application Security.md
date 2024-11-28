@@ -57,4 +57,14 @@ A service account is a Kubernetes object within a project.
 - Controllers
 - Operators
 
+# Application Kubernetes API Authorization with Roles
 
+## Binding Roles to Service Accounts
+
+```
+oc adm policy add-role-to-user cluster-role -z service-account
+```
+
+```
+oc adm policy add-cluster-role-to-user cluster-role service-account
+```
