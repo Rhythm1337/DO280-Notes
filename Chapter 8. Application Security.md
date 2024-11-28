@@ -11,3 +11,32 @@ SCCs are a security mechanism that limits the access from a running pod in Open 
 - Request extra capabilities for a container
 - Use host directory as volumes
 
+### To view the list of different SCCs, Type the following command
+
+```
+oc get scc
+oc get scc -o name (will only show names)
+```
+
+The default SCC used by Open Shift **restricted**
+
+```
+oc describe scc restricted
+```
+
+## Viewing additional information related to SCC
+
+```
+oc describe scc hostnetwork
+
+oc describe pod container-name -n namespace-name | grep scc
+oc get deployment depolyment-name -o yaml | oc adm policy scc-subject-review -f -
+```
+
+## Creating a service account to override some security
+
+```
+oc create serviceaccount account-name
+oc adm policy add-src-to-user SRC -Z account-name
+oc set serviceaccount deployment/deployment-name
+```
