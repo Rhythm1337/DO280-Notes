@@ -1,4 +1,4 @@
-#  Control Application Permissions with Security Context Constraints
+# 1. Control Application Permissions with Security Context Constraints
 
 ## What you will learn
 Create service accounts, apply permissions and manage security constraints
@@ -40,3 +40,21 @@ oc create serviceaccount account-name
 oc adm policy add-src-to-user SRC -Z account-name
 oc set serviceaccount deployment/deployment-name
 ```
+
+# 2.  Allow Application Access to Kubernetes APIs
+
+## What you will learn
+Run an application that requires access to Kubernetes API
+
+## Securing Kubernetes APIs
+With kubernetes API's, a user or an application can query and modify the cluster. To protect your cluster from malacious interactions, you must grant access to different Kubernetes APIs.
+
+## Application Authorization with Service Accounts
+A service account is a Kubernetes object within a project.
+
+## Use Cases for Kubernetes API Access
+- Monitoring Applications
+- Controllers
+- Operators
+
+
