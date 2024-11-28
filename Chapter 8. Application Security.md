@@ -68,3 +68,5 @@ oc adm policy add-role-to-user cluster-role -z service-account
 ```
 oc adm policy add-cluster-role-to-user cluster-role service-account
 ```
+
+# 3. 
