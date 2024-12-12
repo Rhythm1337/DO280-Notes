@@ -68,6 +68,4 @@ Cluster
 
 # 3. The Project Template and the Self-Provisioner Role
 
-## What you will learn
-
-## Project Creation   
+**Read Book for rest**  
