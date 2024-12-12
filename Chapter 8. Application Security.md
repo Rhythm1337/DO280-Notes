@@ -69,4 +69,32 @@ oc adm policy add-role-to-user cluster-role -z service-account
 oc adm policy add-cluster-role-to-user cluster-role service-account
 ```
 
-# 3. 
+# 3. Cluster and Node Maintenance with Kubernetes Cron Jobs
+## What you will learn
+Automate regular tasks on the cluster with kubernetes cron jobs
+
+## Kubernetes Batch API Resources
+
+### Job
+Kubernetes tasks that are executed once 
+
+### Cron Job
+Kubernetes tasks that are executed regularly/ on a schedule
+
+## Kubernetes Jobs
+
+```
+oc create --dry-run=client -o yaml test --image=image_name --curl http://localhost:8080
+```
+
+## Kubernetes Cron Jobs
+
+```
+oc create cronjob --dry-run=client -o yaml test --image=image_name --schedule '0 0 * * *' --curl http:/localhost:8080
+```
+
+## Linux Cron Jobs
+These are your normal cronjobs accessed via `crontab -e` or /etc/crontab
+
+
+
