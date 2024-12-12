@@ -96,5 +96,5 @@ oc create cronjob --dry-run=client -o yaml test --image=image_name --schedule '0
 ## Linux Cron Jobs
 These are your normal cronjobs accessed via `crontab -e` or /etc/crontab
 
-
+**You can also Automate Application Maintenance and General Maintenance Tasks with Cron Jobs. View the student guide for all the yaml files**
 
