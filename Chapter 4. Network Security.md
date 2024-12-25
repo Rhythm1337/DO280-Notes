@@ -34,7 +34,7 @@ With Passthrough termination, encrypted traffic is directly sent to the pod with
 
 ### Re-encryption
 
-This is a variation of Edge termination where traffic sent to the router is encrypted and the route from the router to the application is also encrypted with might be encrypted with a different certificate.
+This is a variation of Edge termination where traffic sent to the router is encrypted and the route from the router to the application is also encrypted which might be encrypted with a different certificate.
 
 ## Securing Applications with Edge Routes
 
