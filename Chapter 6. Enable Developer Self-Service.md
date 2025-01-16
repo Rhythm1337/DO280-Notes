@@ -63,7 +63,7 @@ oc get quota
 Configure default maximum resources for pods per project
 
 ## Managing Namespace Resources
-Cluster 
+My brain too smooth for this 
 
 
 # 3. The Project Template and the Self-Provisioner Role
